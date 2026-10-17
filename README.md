@@ -8,6 +8,8 @@ A REST API for managing patients, doctors and patient-doctor assignments, secure
 
 \## Tech stack
 
+
+
 \- Django, Django REST Framework
 
 \- PostgreSQL
@@ -22,15 +24,19 @@ A REST API for managing patients, doctors and patient-doctor assignments, secure
 
 1\. Clone the repo and create a virtual environment:
 
-```
 
-&#x20;  python -m venv venv
-
-&#x20;  venv\\Scripts\\activate
-
-&#x20;  pip install -r requirements.txt
 
 ```
+
+python -m venv venv
+
+venv\\Scripts\\activate
+
+pip install -r requirements.txt
+
+```
+
+
 
 2\. Create a PostgreSQL database named `healthcare\_db`.
 
@@ -38,11 +44,13 @@ A REST API for managing patients, doctors and patient-doctor assignments, secure
 
 4\. Run migrations and start the server:
 
+
+
 ```
 
-&#x20;  python manage.py migrate
+python manage.py migrate
 
-&#x20;  python manage.py runserver
+python manage.py runserver
 
 ```
 
@@ -60,41 +68,43 @@ All endpoints except register and login need the header `Authorization: Bearer <
 
 |--------|----------|-------------|
 
-| POST | /api/auth/register/ | Register (name, email, password) |
+| POST | `/api/auth/register/` | Register (name, email, password) |
 
-| POST | /api/auth/login/ | Login, returns JWT tokens |
+| POST | `/api/auth/login/` | Login, returns JWT tokens |
 
-| POST | /api/patients/ | Add a patient |
+| POST | `/api/patients/` | Add a patient |
 
-| GET | /api/patients/ | List your patients |
+| GET | `/api/patients/` | List your patients |
 
-| GET | /api/patients/<id>/ | Patient details |
+| GET | `/api/patients/{id}/` | Patient details |
 
-| PUT | /api/patients/<id>/ | Update a patient |
+| PUT | `/api/patients/{id}/` | Update a patient |
 
-| DELETE | /api/patients/<id>/ | Delete a patient |
+| DELETE | `/api/patients/{id}/` | Delete a patient |
 
-| POST | /api/doctors/ | Add a doctor |
+| POST | `/api/doctors/` | Add a doctor |
 
-| GET | /api/doctors/ | List all doctors |
+| GET | `/api/doctors/` | List all doctors |
 
-| GET | /api/doctors/<id>/ | Doctor details |
+| GET | `/api/doctors/{id}/` | Doctor details |
 
-| PUT | /api/doctors/<id>/ | Update a doctor |
+| PUT | `/api/doctors/{id}/` | Update a doctor |
 
-| DELETE | /api/doctors/<id>/ | Delete a doctor |
+| DELETE | `/api/doctors/{id}/` | Delete a doctor |
 
-| POST | /api/mappings/ | Assign a doctor to a patient |
+| POST | `/api/mappings/` | Assign a doctor to a patient |
 
-| GET | /api/mappings/ | List all mappings |
+| GET | `/api/mappings/` | List all mappings |
 
-| GET | /api/mappings/<patient\_id>/ | Doctors assigned to a patient |
+| GET | `/api/mappings/{patient\_id}/` | Doctors assigned to a patient |
 
-| DELETE | /api/mappings/<id>/ | Remove a mapping |
+| DELETE | `/api/mappings/{id}/` | Remove a mapping |
 
 
 
 \## Notes
+
+
 
 \- Patients are visible only to the user who created them.
 
